@@ -13,4 +13,5 @@ public interface DepartmentService {
 	
 	public DepartmentDto getDepartmentsById(long id);
 	
+	public DepartmentDto getDepartmentsCode(String departmentCode);
 }

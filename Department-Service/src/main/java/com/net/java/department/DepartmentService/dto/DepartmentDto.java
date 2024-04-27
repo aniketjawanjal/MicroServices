@@ -1,6 +1,5 @@
 package com.net.java.department.DepartmentService.dto;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,13 +15,13 @@ public class DepartmentDto {
 	private long id;
 
 	@NotEmpty(message = "Department Code should not be null or Blank")
-	private String department_code;
-	
+	private String departmentcode;
+
 	@NotEmpty(message = "Department discription should not be null or Blank")
-	private String department_discription;
+	private String departmentDescription;
 
 	@NotEmpty(message = "Department Name should not be null or Blank")
-	private String department_name;
+	private String departmentName;
 
 	public long getId() {
 		return id;
@@ -32,34 +31,34 @@ public class DepartmentDto {
 		this.id = id;
 	}
 
-	public String getDepartment_code() {
-		return department_code;
+	public String getDepartmentcode() {
+		return departmentcode;
 	}
 
-	public void setDepartment_code(String department_code) {
-		this.department_code = department_code;
+	public void setDepartmentcode(String departmentcode) {
+		this.departmentcode = departmentcode;
 	}
 
-	public String getDepartment_discription() {
-		return department_discription;
+	public String getDepartmentDescription() {
+		return departmentDescription;
 	}
 
-	public void setDepartment_discription(String department_discription) {
-		this.department_discription = department_discription;
+	public void setDepartmentDescription(String departmentDescription) {
+		this.departmentDescription = departmentDescription;
 	}
 
-	public String getDepartment_name() {
-		return department_name;
+	public String getDepartmentName() {
+		return departmentName;
 	}
 
-	public void setDepartment_name(String department_name) {
-		this.department_name = department_name;
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
 	}
 
 	@Override
 	public String toString() {
-		return "DepartmentDto [id=" + id + ", department_code=" + department_code + ", department_discription="
-				+ department_discription + ", department_name=" + department_name + "]";
+		return "DepartmentDto [id=" + id + ", departmentcode=" + departmentcode + ", departmentDescription="
+				+ departmentDescription + ", departmentName=" + departmentName + "]";
 	}
 
 }

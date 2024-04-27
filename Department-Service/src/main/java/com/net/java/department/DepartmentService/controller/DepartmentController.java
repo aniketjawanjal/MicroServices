@@ -31,7 +31,7 @@ public class DepartmentController {
 	}
 
 	@PostMapping("/save")
-	public ResponseEntity<DepartmentDto> saveDepartmentDetail( @Valid @RequestBody DepartmentDto entity) {
+	public ResponseEntity<DepartmentDto> saveDepartmentDetail(@Valid @RequestBody DepartmentDto entity) {
 		DepartmentDto departmentDetails = service.saveDepartmentDetails(entity);
 
 		return new ResponseEntity<DepartmentDto>(departmentDetails, HttpStatus.CREATED);
@@ -48,6 +48,11 @@ public class DepartmentController {
 	public ResponseEntity<DepartmentDto> getDepartmentById(@PathVariable long id) {
 		DepartmentDto departmentsById = service.getDepartmentsById(id);
 		return new ResponseEntity<DepartmentDto>(departmentsById, HttpStatus.OK);
+	}
+
+	@GetMapping("/get-department-code/{departmentCode}")
+	public ResponseEntity<DepartmentDto> getDepartmentByCode(@PathVariable String departmentCode) {
+		return new ResponseEntity<DepartmentDto>(service.getDepartmentsCode(departmentCode), HttpStatus.OK);
 	}
 
 }

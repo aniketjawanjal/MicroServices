@@ -1,6 +1,5 @@
 package com.net.java.department.DepartmentService.entity;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,10 +12,10 @@ public class DepartmentEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	private String department_code;
-	private String department_discription;
-	private String department_name;
-	
+	private String departmentcode;
+	private String departmentDiscription;
+	private String departmentName;
+
 	public long getId() {
 		return id;
 	}
@@ -25,34 +24,34 @@ public class DepartmentEntity {
 		this.id = id;
 	}
 
-	public String getDepartment_code() {
-		return department_code;
+	public String getDepartmentcode() {
+		return departmentcode;
 	}
 
-	public void setDepartment_code(String department_code) {
-		this.department_code = department_code;
+	public String getDepartmentDiscription() {
+		return departmentDiscription;
 	}
 
-	public String getDepartment_discription() {
-		return department_discription;
+	public void setDepartmentDiscription(String departmentDiscription) {
+		this.departmentDiscription = departmentDiscription;
 	}
 
-	public void setDepartment_discription(String department_discription) {
-		this.department_discription = department_discription;
+	public String getDepartmentName() {
+		return departmentName;
 	}
 
-	public String getDepartment_name() {
-		return department_name;
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
 	}
 
-	public void setDepartment_name(String department_name) {
-		this.department_name = department_name;
+	public void setDepartmentcode(String departmentcode) {
+		this.departmentcode = departmentcode;
 	}
 
 	@Override
 	public String toString() {
-		return "DepartmentEntity [id=" + id + ", department_code=" + department_code + ", department_discription="
-				+ department_discription + ", department_name=" + department_name + "]";
+		return "DepartmentEntity [id=" + id + ", departmentcode=" + departmentcode + ", departmentDiscription="
+				+ departmentDiscription + ", departmentName=" + departmentName + "]";
 	}
 
 }

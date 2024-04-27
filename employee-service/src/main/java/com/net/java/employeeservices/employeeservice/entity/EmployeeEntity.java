@@ -20,6 +20,18 @@ public class EmployeeEntity {
 	private String firstName;
 	@Column(name = "last_name")
 	private String lastName;
+//	@Column(name = "departmentcode")
+	private String departmentcode;
+
+	private String organizationCode;
+
+	public String getdepartmentcode() {
+		return departmentcode;
+	}
+
+	public void setdepartmentcode(String departmentcode) {
+		this.departmentcode = departmentcode;
+	}
 
 	public long getId() {
 		return id;
@@ -53,10 +65,26 @@ public class EmployeeEntity {
 		this.lastName = lastName;
 	}
 
+	public String getDepartmentcode() {
+		return departmentcode;
+	}
+
+	public void setDepartmentcode(String departmentcode) {
+		this.departmentcode = departmentcode;
+	}
+
+	public String getOrganizationCode() {
+		return organizationCode;
+	}
+
+	public void setOrganizationCode(String organizationCode) {
+		this.organizationCode = organizationCode;
+	}
+
 	@Override
 	public String toString() {
 		return "EmployeeEntity [id=" + id + ", email=" + email + ", firstName=" + firstName + ", lastName=" + lastName
-				+ "]";
+				+ ", departmentcode=" + departmentcode + ", organizationCode=" + organizationCode + "]";
 	}
 
 }

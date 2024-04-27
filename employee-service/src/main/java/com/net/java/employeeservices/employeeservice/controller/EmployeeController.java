@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.net.java.employeeservices.employeeservice.dto.ApiResponce;
 import com.net.java.employeeservices.employeeservice.dto.EmployeeDto;
 import com.net.java.employeeservices.employeeservice.service.EmployeeService;
 
@@ -40,7 +41,7 @@ public class EmployeeController {
 	}
 
 	@GetMapping("get-employee/{id}")
-	public ResponseEntity<EmployeeDto> getEmployeeById(@PathVariable long id) {
-		return new ResponseEntity<EmployeeDto>(service.getEmployeeDetailsById(id), HttpStatus.OK);
+	public ResponseEntity<ApiResponce> getEmployeeById(@PathVariable long id) {
+		return new ResponseEntity<ApiResponce>(service.getEmployeeDetailsById(id), HttpStatus.OK);
 	}
 }

@@ -17,14 +17,24 @@ public class EmployeeDto {
 	@Email(message = "Email is not valid.")
 	@NotEmpty(message = "Email Should Not Be Null or Empty.")
 	private String email;
-	
+
 	@Column(name = "first_name")
 	@NotEmpty(message = "First Name Should Not Be Empty.")
 	private String firstName;
-	
+
 	@NotEmpty(message = "Last Name Should Not Be Empty.")
 	@Column(name = "last_name")
 	private String lastName;
+
+	private String departmentcode;
+
+	public String getDepartmentcode() {
+		return departmentcode;
+	}
+
+	public void setDepartmentcode(String departmentcode) {
+		this.departmentcode = departmentcode;
+	}
 
 	public long getId() {
 		return id;
@@ -61,7 +71,7 @@ public class EmployeeDto {
 	@Override
 	public String toString() {
 		return "EmployeeDto [id=" + id + ", email=" + email + ", firstName=" + firstName + ", lastName=" + lastName
-				+ "]";
+				+ ", departmentcode=" + departmentcode + "]";
 	}
 
 }
