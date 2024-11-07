@@ -48,7 +48,7 @@ public class OrgnizationController {
 		return ResponseEntity.ok(dto);
 	}
 	
-	@GetMapping("/get-organizationCode/{id}")
+	@GetMapping("/organizationCode/{id}")
 	public ResponseEntity<OrganizationDto> getOrganizationCode(@PathVariable String id){
 		OrganizationDto dto = service.getOrganizationCode(id);
 		return ResponseEntity.ok(dto);
