@@ -34,8 +34,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Autowired
 	private WebClient webClient;
 
-//	@Autowired
-//	private ApiClient apiClient;
+	@Autowired
+	private DepartmentApiClient departmentApiClient;
+	
+	@Autowired
+	OrganizationApiClient organizationApiClient;
 
 	@Override
 	public EmployeeDto saveEmployeeDetails(EmployeeDto dto) {
@@ -56,17 +59,18 @@ public class EmployeeServiceImpl implements EmployeeService {
 				.orElseThrow(() -> new ResourceNotFoundException("Employee", "ID", id));
 //		return mapper.map(entity, EmployeeDto.class);
 
-		DepartmentDto departmentDto = webClient.get()
-				.uri("http://localhost:8081/api/departments/get-department-code/" + entity.getdepartmentcode())
-				.retrieve().bodyToMono(DepartmentDto.class).block();
-//		DepartmentDto department = apiClient.getDepartment(entity.getDepartmentCode());
+//		DepartmentDto departmentDto = webClient.get()
+//				.uri("http://localhost:8081/api/departments/get-department-code/" + entity.getdepartmentcode())
+//				.retrieve().bodyToMono(DepartmentDto.class).block();
+		DepartmentDto departmentDto = departmentApiClient.getDepartment(entity.getdepartmentcode());
 		// return mapper.map(departmentDto, EmployeeDto.class);
 
 		EmployeeDto employeeDto = mapper.map(entity, EmployeeDto.class);
 
-		OrganizationDto organizationDto = webClient.get().uri("http://localhost:8082/api/organization-service/get-organizationCode/"+entity.getOrganizationCode())
-				.retrieve().bodyToMono(OrganizationDto.class).block();
+//		OrganizationDto organizationDto = webClient.get().uri("http://localhost:8082/api/organization-service/get-organizationCode/"+entity.getOrganizationCode())
+//				.retrieve().bodyToMono(OrganizationDto.class).block();
 		
+		OrganizationDto organizationDto = organizationApiClient.getOrganizationDto(entity.getOrganizationCode());
 	
 		ApiResponce apiResponce = new ApiResponce();
 		apiResponce.setEmployeeDto(employeeDto);
